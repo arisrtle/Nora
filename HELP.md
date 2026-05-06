@@ -20,12 +20,20 @@ Nora/
 │   │   ├── SKILL.md
 │   │   └── scripts/
 │   │       └── hello.py
-│   └── sqlite-sample/        # 验证 DB-as-skill 模式
+│   ├── sqlite-sample/        # 验证 DB-as-skill 模式
+│   │   ├── SKILL.md
+│   │   ├── scripts/
+│   │   │   └── query.py
+│   │   └── references/
+│   │       └── schema.md
+│   ├── markitdown/        # 主流格式转md
 │       ├── SKILL.md
 │       ├── scripts/
-│       │   └── query.py
+│       │   └── convert.py              # 主转换脚本
+│       │   └── batch_convert.py        # 批量转换脚本
+│       │   └── __init__.py             # Python 包标识
 │       └── references/
-│           └── schema.md
+│           └── formats.md              # 支持格式参考文档
 │
 ├── adapters/
 │   ├── __init__.py
@@ -48,12 +56,6 @@ Nora/
 └── main.py                   # 统一入口:python main.py cli/webui
 ```
 
-当前你的实际路径：
-Nora/skills/html-ppt/examples/my-deck/index.html
-                    ↑ 需要访问 assets/
 
-相对路径 "../assets/" 指向：
-Nora/skills/html-ppt/assets/  ✅ 正确！
 
-相对路径 "../../assets/" 指向：
-Nora/skills/assets/  ❌ 错误！
+现在已经可以正常使用markitdown，并安装了markitdown-ocr。我需要把它包装成一个skill，在我的智能体里调用。这个skill需要遵守 [agentskills.io](https://agentskills.io) 开放标准。并且放在Nora/skills/markitdown文件夹下。我的系统已经安装了markitdown，并且加入了path。你帮我写skill.md 和/script文件夹下必要的文档。并且发给我下载。Nora目录结构如下：

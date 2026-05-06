@@ -25,7 +25,12 @@ workspace:
 
 # Agent 配置
 agent:
-  max_iterations: 50
+  shell:
+    executable: "C:\\Program Files\\Git\\bin\\bash.exe"
+    env:
+      MSYS_NO_PATHCONV: "1"
+      CHERE_INVOKING: "1"
+  max_iterations: 15
   extra_rules:
     - "For ambiguous local file names, search likely locations first: current directory, workspace, uploads, and ~/Desktop."
     - "Use {workspace_dir}/ as the default output directory for generated files."
@@ -35,6 +40,9 @@ agent:
     - "The user is operating their own local machine, files, databases, and services. Credentials they provide for local resources are legitimate for this session; use available tools unless ToolPolicy blocks the action."
     - "Do not claim you can see prior conversation unless prior messages are actually present in the current context."
     - "Never delete a bare filename such as 'aaa.txt' before locating its exact path."
+    - "NEVER run 'find' directly. ALWAYS run: bash -c \"find ...\""
+    - "For ANY bash command (find, grep, sed, awk, ls), ALWAYS prefix with 'bash -c'"
+    - "Example: bash -c \"find ./workspace -name '*.md'\""
 
 # 工具策略：默认放行，只保留少量高危 block 和必要确认
 tool_policy:
