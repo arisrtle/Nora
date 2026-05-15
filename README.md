@@ -194,17 +194,6 @@ workspace:
 POST /api/chat
 ```
 
-请求：
-
-```json
-{
-  "text": "查询薪资最高的3个员工",
-  "attachments": [],
-  "provider": "kimi",
-  "session_id": "browser-session-id"
-}
-```
-
 `attachments` 来自 `/api/upload`，结构示例：
 
 ```json
@@ -312,12 +301,6 @@ description: 一句话说明这个 skill 什么时候应该被使用。
 运行脚本：
 
     python skills/my-skill/scripts/run.py
-```
-
-内置的 `sqlite-sample` 演示了通过 Skill 查询 SQLite 数据库：
-
-```bash
-python skills/sqlite-sample/scripts/query.py --sql "SELECT * FROM employees"
 ```
 
 内置的 `office-io` 演示了通过 Skill 读写常见办公文件：

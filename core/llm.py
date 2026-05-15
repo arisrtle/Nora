@@ -20,7 +20,7 @@ PROVIDERS: Dict[str, Dict] = {
     },
     "qwen": {
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "default_model": "deepseek-v3.2-exp",
+        "default_model": "qwen3.6-flash",
         "supports_vision": True,
         "env_key": "DASHSCOPE_API_KEY",
     },
@@ -41,7 +41,13 @@ PROVIDERS: Dict[str, Dict] = {
         "default_model": "openai/chatgpt-4o-mini",      
         "supports_vision": True,
         "env_key": "GITHUB_TOKEN",
-    }
+    },
+    # "SCNet": {
+    #     "base_url": "https://api.scnet.cn/api/llm/v1/",   
+    #     "default_model": "DeepSeek-R1-Distill-Qwen-7B",      
+    #     "supports_vision": True,
+    #     "env_key": "SCNET_TOKEN",
+    # }    
 }
 
 
